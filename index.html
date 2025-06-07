@@ -376,6 +376,20 @@
       line-height: 1.5;
       user-select:none;
     }
+    /* Make entire anchor in card clickable and styled */
+    .card-link {
+      display: block;
+      color: var(--color-primary);
+      font-weight: 700;
+      text-decoration: underline;
+      user-select:none;
+    }
+    .card-link:hover,
+    .card-link:focus {
+      color: var(--color-primary-dark);
+      outline: none;
+      text-decoration: underline;
+    }
 
     section#about, section#contact {
       max-width: 700px;
@@ -526,11 +540,11 @@
       <h3>🌀 Hypnotic. Electric. Unrelenting.</h3>
       <p id="desc1">Welcome to the Cripyverse, where your wallet becomes your weapon, and your eyes light up with every pump.</p>
     </article>
-    <article class="card" tabindex="0" aria-describedby="desc2" role="article">
-      <h3>💰 BUY NOW on Pump.fun</h3>
-      <p id="desc2">
-        <a href="https://pump.fun" target="_blank" rel="noopener" aria-label="Buy Cripy on Pump.fun" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">Buy Cripy</a>
-      </p>
+    <article class="card" tabindex="0" role="link" aria-label="Buy Cripy on Pump.fun, click to visit website">
+      <a href="https://pump.fun/coin/FsjSf8VtNSFRDE8Lmz65tndSCuMvVHgwk9Vsug1Jpump" target="_blank" rel="noopener" class="card-link">
+        <h3>💰 BUY NOW on Pump.fun</h3>
+        <p>Buy Cripy</p>
+      </a>
     </article>
     <article class="card" tabindex="0" aria-describedby="desc3" role="article">
       <h3>⚡️ #CripyCoin</h3>
