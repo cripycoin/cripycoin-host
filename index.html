@@ -8,16 +8,13 @@
   <style>
     :root {
       --color-bg: #121217;
-      /* Darker, eye-catching, vibing "cripy" color palette: softened electric blue + muted violet + scary red accent */
+      /* Darker, eye-catching, vibing "cripy" color palette: softened electric blue + muted violet */
       --color-primary: #4a7eff;
       --color-primary-dark: #355bcc;
       --color-secondary: #675ea3;
       --color-text-primary: #dcdcdc;
       --color-text-secondary: #8f8fa3;
       --color-shadow: rgba(74, 126, 255, 0.25);
-      --color-blood-red: #8b0000;
-      --color-blood-red-glow: rgba(139, 0, 0, 0.8);
-
       --font-sans: 'Inter', sans-serif;
       --font-cartoony: 'Press Start 2P', cursive;
 
@@ -74,7 +71,6 @@
       align-items: center;
       justify-content: space-between;
     }
-    /* Subtle glowing header logo */
     .logo {
       font-family: var(--font-cartoony);
       font-weight: 700;
@@ -142,7 +138,6 @@
       animation-iteration-count: infinite;
       animation-direction: alternate;
     }
-    /* Different sizes and animations for shapes */
     .shape1 {
       width: 140px; height: 140px;
       background: var(--color-primary);
@@ -188,7 +183,6 @@
       margin-bottom: 5rem;
       position: relative;
     }
-    /* Enhanced big scary glowing CRÍPY COIN */
     .hero h1 {
       font-family: var(--font-cartoony);
       font-weight: 700;
@@ -198,15 +192,14 @@
       margin-bottom: 0.5rem;
       user-select:none;
       letter-spacing: 0.05em;
-      /* doubled glow with blue and blood red for scarier effect */
       filter:
         drop-shadow(0 0 10px var(--color-primary))
         drop-shadow(0 0 20px var(--color-primary))
-        drop-shadow(0 0 8px var(--color-blood-red));
+        drop-shadow(0 0 8px #8b0000);
       text-shadow:
         0 0 12px var(--color-primary),
         0 0 30px var(--color-primary),
-        0 0 45px var(--color-blood-red-glow),
+        0 0 45px rgba(139, 0, 0, 0.8),
         0 0 60px var(--color-secondary);
     }
     .hero p.subtitle {
@@ -235,8 +228,8 @@
 
     /* Creepy Eyes SVG */
     .eyes-wrapper {
-      width: 195px; /* 130 * 1.5 */
-      height: 90px; /* 60 * 1.5 */
+      width: 195px;
+      height: 90px;
       margin: 1rem auto 3rem;
       filter:
         drop-shadow(0 0 12px #1a0000cc)
@@ -325,7 +318,6 @@
         0 0 12px #1a0e1a;
       opacity: 1;
     }
-    /* Pulse Animation */
     .btn-primary.pulse {
       animation: pulseShadow var(--pulse-duration) infinite ease-in-out alternate;
     }
@@ -373,7 +365,6 @@
       margin-top: 0;
       font-size: 1.4rem;
       margin-bottom: 1rem;
-      /* cartoon gradient text */
       background: linear-gradient(45deg, #4a7eff, #675ea3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -422,20 +413,17 @@
       color: var(--color-primary-dark);
       outline: none;
     }
-    /* Additional contact info styling */
-    section#contact p.extra-contact {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--color-text-primary);
-      margin-top: 1rem;
-      line-height: 1.5;
+
+    /* Add spacing for new contact lines with symbols */
+    .contact-line {
+      margin-bottom: 0.8rem;
       user-select:none;
     }
-    section#contact p.extra-contact span {
+    .contact-line span {
       font-weight: 700;
       color: var(--color-primary);
-      display: inline-block;
-      min-width: 60px;
+      margin-right: 0.3rem;
+      user-select:none;
     }
 
     footer {
@@ -493,20 +481,16 @@
     <h1>CRÍPY COIN</h1>
     <div class="eyes-wrapper" aria-hidden="true" aria-label="Creepy glowing eyes animation">
       <svg width="195" height="90" viewBox="0 0 130 60" fill="none" xmlns="http://www.w3.org/2000/svg" >
-        <!-- Left eye shape: dark slightly elongated ellipse with subtle red vents -->
         <ellipse cx="40" cy="30" rx="32" ry="22" fill="#16090a" stroke="#4a7eff" stroke-width="3" filter="url(#eyeGlow)"/>
         <path d="M 18 26 Q 30 10 52 21" stroke="#7a1a1a" stroke-width="2" fill="none" />
         <path d="M 15 32 Q 25 46 50 40" stroke="#7a1a1a" stroke-width="2" fill="none" />
-        <!-- Left pupil with radial gradient red flicker -->
         <circle cx="40" cy="30" r="13" fill="url(#pupilGradient)">
           <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite" />
         </circle>
         <circle id="pupil-left" cx="40" cy="30" r="6" fill="#330000" filter="url(#pupilGlow)"/>
-        <!-- Right eye shape -->
         <ellipse cx="90" cy="30" rx="32" ry="22" fill="#16090a" stroke="#4a7eff" stroke-width="3" filter="url(#eyeGlow)"/>
         <path d="M 70 26 Q 82 10 104 21" stroke="#7a1a1a" stroke-width="2" fill="none" />
         <path d="M 67 32 Q 77 46 102 40" stroke="#7a1a1a" stroke-width="2" fill="none" />
-        <!-- Right pupil -->
         <circle cx="90" cy="30" r="13" fill="url(#pupilGradient)">
           <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite" />
         </circle>
@@ -563,16 +547,11 @@
   <section id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title">Contact Us</h2>
     <p>
-      🕸 X (Twitter): <a href="https://x.com/cripycoin" target="_blank" rel="noopener" aria-label="Cripycoin Twitter">@cripycoin</a><br />
-      📢 Telegram Announcements: <a href="https://t.me/cripy_coin" target="_blank" rel="noopener" aria-label="Telegram announcements channel for Cripy">@cripy_coin</a><br />
-      💬 Telegram Discussion: <a href="https://t.me/cripy_coin_d" target="_blank" rel="noopener" aria-label="Telegram discussion channel for Cripy">@cripy_coin_d</a>
-    </p>
-    <p class="extra-contact">
-      <span>Web -</span> cripycoin.com<br />
-      <span>X -</span> @cripycoin<br />
-      <span>Tg -</span> @cripy_coin<br />
-      <span>Ig -</span> @cripycoin<br />
-      <span>TikTok -</span> @cripycoin
+      <span>🌐 Web - </span><a href="https://cripycoin.com" target="_blank" rel="noopener" aria-label="Cripycoin website">cripycoin.com</a><br />
+      <span>🐦 X - </span><a href="https://x.com/cripycoin" target="_blank" rel="noopener" aria-label="X profile @cripycoin">@cripycoin</a><br />
+      <span>📢 Tg - </span><a href="https://t.me/cripy_coin" target="_blank" rel="noopener" aria-label="Telegram channel @cripy_coin">@cripy_coin</a><br />
+      <span>📷 Ig - </span><a href="https://instagram.com/cripycoin" target="_blank" rel="noopener" aria-label="Instagram profile @cripycoin">@cripycoin</a><br />
+      <span>🎵 TikTok - </span><a href="https://tiktok.com/@cripycoin" target="_blank" rel="noopener" aria-label="TikTok profile @cripycoin">@cripycoin</a>
     </p>
   </section>
 </main>
@@ -736,4 +715,3 @@
 </script>
 </body>
 </html>
-
